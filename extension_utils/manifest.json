@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "NLP & RAG based credibilty scoring ",
+    "version": "1.0",
+    "description": "Find every article that uses the same picture – no API key needed.",
+    "icons": {
+      "16": "images/owl16.png",
+      "128": "images/owl128.png"
+    },
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": { "service_worker": "background.js" },
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }],
+    "action": { 
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/owl16.png",
+        "128": "images/owl128.png"
+      }
+    }
+  }
